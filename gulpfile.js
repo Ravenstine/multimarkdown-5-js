@@ -28,21 +28,21 @@ gulp.task('fix-strtok', function(){
 gulp.task('build-libmultimarkdown', shell.task([[
     'cd tmp/multimarkdown-5',
     "make build/parser.o",
-    "emcc -O2 src/*.c -o ../../tmp/libMultiMarkdown.js -s EXPORTED_FUNCTIONS=\"['_mmd_version', '_markdown_to_string']\" -s OUTLINING_LIMIT=10000 -s TOTAL_MEMORY=268435456 -s ASSERTIONS=1",
+    "emcc -O1 src/*.c -o ../../tmp/libMultiMarkdown.js -s EXPORTED_FUNCTIONS=\"['_mmd_version', '_markdown_to_string']\" -s OUTLINING_LIMIT=10000 -s TOTAL_MEMORY=268435456 -s ASSERTIONS=1",
 ].join('\n')]));
 
 gulp.task('compile', function(){
-  return gulp.src(['tmp/libMultiMarkdown.js', 'src/multimarkdown-5.js'])
-    .pipe(concat('multimarkdown-5.js'))
+  return gulp.src(['tmp/libMultiMarkdown.js', 'src/multimarkdown.js'])
+    .pipe(concat('multimarkdown.js'))
     .pipe(iife())
     .pipe(gulp.dest('build'));
 })
 
 gulp.task('browserify', function(){
   return browserify()
-    .require("./build/multimarkdown-5.js", {expose: "multimarkdown-5"})
+    .require("./build/multimarkdown.js", {expose: "multimarkdown-js"})
     .bundle()
-    .pipe(source('multimarkdown-5.js'))
+    .pipe(source('multimarkdown.js'))
     .pipe(gulp.dest('build/browser'));  
 })
 

@@ -1,25 +1,24 @@
 {
-  "name": "multimarkdown-5",
+  "name": "multimarkdown-js",
   "version": "1.0.0",
   "description": "Multimarkdown-5 compiled to JavaScript with Emscripten.",
-  "main": "build/multimarkdown-5.js",
+  "main": "build/multimarkdown.js",
   "browser": {
-    "multimarkdown-5": "./dist/browser/multimarkdown-5.js"
+    "multimarkdown-js": "./dist/browser/multimarkdown.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "gulp build"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "browserify": "^13.0.1",
-    "finalhandler": "^0.4.1",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-iife": "^0.3.0",
     "gulp-shell": "^0.5.2",
     "run-sequence": "^1.1.5",
-    "serve-static": "^1.10.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   }
