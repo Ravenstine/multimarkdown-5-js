@@ -2,7 +2,7 @@
   "name": "multimarkdown-5",
   "version": "1.0.0",
   "description": "Multimarkdown-5 compiled to JavaScript with Emscripten.",
-  "main": "dist/multimarkdown-5.js",
+  "main": "build/multimarkdown-5.js",
   "browser": {
     "multimarkdown-5": "./dist/browser/multimarkdown-5.js"
   },
