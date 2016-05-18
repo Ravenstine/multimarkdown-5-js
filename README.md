@@ -10,7 +10,7 @@ Render [MultiMarkdown](https://github.com/fletcher/MultiMarkdown-5) to HTML with
 
 ## Installation
 
-`npm install --save ravenstine/multimarkdown-js`
+`npm install --save ravenstine/multimarkdown-5-js`
 
 If your prerequisites are installed and initialized correctly, the source of MultiMarkdown v5 should be pulled and compiled to JS with Emscripten and you should be ready to go.
 
